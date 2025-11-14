@@ -1,5 +1,16 @@
 import express from 'express'
+import students from './routes/student.js'
+import teachers from './routes/teacher.js'
 const app = express()
+
+
+app.use('/students', students)
+app.use('/teachers', teachers)
+
+
+
+
+
 app.listen(3000, () => console.log("Server Up babe"));
 
 // 1. Create routes folder and put all your routes in diff file
