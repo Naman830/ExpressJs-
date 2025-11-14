@@ -6,7 +6,20 @@
 // 6. Provide port
 // 7. Basic route
 
-import express from 'express'
-const app = express()
+import express from "express";
+const app = express();
+
+// Basic routing
+app.get("/", (req, res) => {
+  res.send("<h1> Welcome to HomePage </h1>");
+});
+
+app.get("/about", (req, res) => {
+  res.send("<h1> This is About Section </h1>");
+});
+
+app.get("/contact", (req, res) => {
+    res.send("<h1>This is Contact Section</h1>")
+})
 
 app.listen(3000, () => console.log("Server Stareted..."));
