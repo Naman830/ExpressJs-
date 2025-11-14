@@ -15,8 +15,25 @@ const app = express();
 // });
 
 // Regex 
-app.get(/x/, (req, res) => {
-    res.send("If the path includes the letter (x) it will work")
+// app.get(/^\/users\/[0-9]{4}$/, (req, res) => {
+//     res.send("If the path includes the letter (x) it will work")
+// })
+
+
+// Nested Routes
+// app.get('/products/product/product-details', (req, res) => {
+//     res.send("This code will run if you provide /products/iphone")
+// })
+
+
+// Advance callback functions
+app.get('/double-cb', (req, res, next) => {
+    // res.send("Single callback function")
+    console.log("First callback function");
+    next()
+    
+}, (req, res) => {
+    res.send("second callback")
 })
 
 app.listen(3000, () => console.log("Server Stareted..."));
