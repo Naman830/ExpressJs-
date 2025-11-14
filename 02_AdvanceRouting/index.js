@@ -9,6 +9,7 @@ const app = express();
 // Delete --> Delete data
 // ALl    --> Any http request method
 
+// GET ROUTING METHODS
 // String Pattern Path
 // app.get("/abcd", (req, res) => {
 //   res.send("If the user hit /acd or /abcd then this will run...");
@@ -27,13 +28,40 @@ const app = express();
 
 
 // Advance callback functions
-app.get('/double-cb', (req, res, next) => {
-    // res.send("Single callback function")
-    console.log("First callback function");
+// PASSING MULTIPLE CALLPBACK FUNCTONS
+// app.get('/double-cb', 
+//   (req, res, next) => {
+//     console.log("First callback");
+//     next();
+//   },
+//   (req, res, next) => {
+//     console.log("Second callback");
+//     next();
+//   },
+//   (req, res) => {
+//     res.send("Final response from third callback");
+//   }
+// );
+
+
+
+// ARRAY CALL BACK FUNCTION 
+const cb1 = (req, res, next) => {
+    console.log("First Callback");
     next()
-    
-}, (req, res) => {
-    res.send("second callback")
-})
+}
+
+const cb2 = (req, res, next) => {
+    console.log("Second Callback");
+    next()
+}
+const cb3 = (req, res) => {
+    console.log("Third Callback");
+    res.send("Third Callback");
+}
+
+app.get('/array-cb', [cb1, cb2, cb3])
+
+
 
 app.listen(3000, () => console.log("Server Stareted..."));
