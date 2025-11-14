@@ -1,15 +1,10 @@
-import express from 'express'
-import students from './routes/student.js'
-import teachers from './routes/teacher.js'
-const app = express()
+import express from "express";
+import students from "./routes/student.js";
+import teachers from "./routes/teacher.js";
+const app = express();
 
-
-app.use('/students', students)
-app.use('/teachers', teachers)
-
-
-
-
+app.use("/students", students);
+app.use("/teachers", teachers);
 
 app.listen(3000, () => console.log("Server Up babe"));
 

@@ -1,5 +1,5 @@
-import express from 'express'
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
 router.get("/all", (req, res) => {
   res.send("All teacher are Here!!!");
