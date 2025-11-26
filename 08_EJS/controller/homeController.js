@@ -1,7 +1,8 @@
-export const homePageRender = (req, res) => {
-    res.render("index");
-};
+export default function homePageRender(req, res) {
+  const data = {
+    name: "Naman",
+    userId: 30,
+  };
 
-export const aboutPageRender = (req, res) => {
-    res.render("about");
-};
+  res.render("index", data);
+}

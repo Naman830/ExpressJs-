@@ -1,8 +1,6 @@
 import express from "express";
-import {
-    homePageRender,
-    aboutPageRender,
-} from "../controller/homeController.js";
+import homePageRender from "../controller/homeController.js";
+import aboutPageRender from "../controller/aboutController.js";
 
 const router = express.Router();
 router.get("/", homePageRender);
