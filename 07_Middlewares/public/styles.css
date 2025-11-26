@@ -1,0 +1,9 @@
+*{
+    display: grid;
+    place-items: center;
+    color: white;
+    background: #333;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
